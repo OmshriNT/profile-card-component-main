@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  --dark-gray-neutral: hsl(0, 0%, 59%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  background: url(./images/bg-pattern-top.svg),
+    url(./images/bg-pattern-bottom.svg), var(--dark-cyan);
+  background-position: top 180% left -40%, bottom 350% right -50%;
+  background-repeat: no-repeat;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 18px;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card {
+  background-image: url(./images/bg-pattern-card.svg);
+  border-radius: 10px;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.container {
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 500px;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.profile-image {
+  background-image: url(./images/image-victor.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  width: 100px;
+  height: 100px;
+  z-index: 3;
+}
+
+.container > * {
+  color: var(--dark-gray-neutral);
+  font-family: inherit;
+  font-weight: 400;
+  width: 500px;
+  padding: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.container span {
+  color: var(--desaturated-blue);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.container .name {
+  color: var(--dark-grayish-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .stats {
+  color: var(--dark-gray-neutral);
+}
+
+.name div {
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.stats {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0;
+}
+
+.stats div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 400px) {
+  body {
+    background: url(./images/bg-pattern-top.svg),
+      url(./images/bg-pattern-bottom.svg), var(--dark-cyan);
+    background-position: top, bottom -110%;
+    background-repeat: no-repeat;
+  }
+
+  .profile-card,
+  .container,
+  .container > * {
+    max-width: 300px;
+  }
+
+  .profile-image {
+    left: 35%;
+  }
+}
